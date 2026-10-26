@@ -27,6 +27,8 @@ npm ci
 npm link
 ```
 
+If installation from GitHub fails with npm’s `EALLOWSCRIPTS` error, use the source-install commands above. This avoids the nested Git preparation path while preserving your existing npm script policy.
+
 Try the viewer without an account or model call:
 
 ```bash
@@ -137,7 +139,7 @@ npm run test:browser   # Browser interaction and responsive-layout checks
 npm run dev -- --help
 ```
 
-A ready-to-use GitHub Actions workflow is provided in [docs/ci.yml.example](docs/ci.yml.example). To enable it, copy it to `.github/workflows/ci.yml` and commit using credentials with workflow-write permission. The initial repository token could publish source but not activate Actions workflows.
+A ready-to-use GitHub Actions workflow is provided in [docs/ci.yml.example](docs/ci.yml.example). To enable it, copy it to `.github/workflows/ci.yml` and commit using credentials with workflow-write permission. CI is provided as an example and is not active by default.
 
 Browser tests use `/usr/bin/google-chrome` when available; otherwise install Chromium with `npx playwright install chromium`. Tests use temporary Git repositories and a fake local OpenAI endpoint; they require no model credentials and incur no model usage.
 
