@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.guided-reviews/
+*.tgz
+.env
+.env.*
+playwright-report/
+test-results/
